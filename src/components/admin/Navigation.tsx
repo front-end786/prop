@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
+import Image from "next/image";
 
 function Navigation() {
   const [addStyle, setAddstyle] = useState(true);
@@ -16,10 +17,14 @@ function Navigation() {
     { link: "/admin", name: "Admin" },
     { link: "/admin/users", name: "Users" },
     { link: "/admin/calculator", name: "Calculators" },
+    { link: "/admin/dashboard", name: "Dashboard" },
   ];
   return (
-    <nav className={addStyle ? "border-b border-gray-500 h-[15]" : "h-[15vh]"}>
-      <div className=" flex flex-wrap w-full justify-end p-8 items-center">
+    <nav
+      onScroll={scrollEvent}
+      className={addStyle ? "border-b border-gray-500 h-[15]" : "h-[15vh]"}
+    >
+      {/* <div className=" flex flex-wrap w-full justify-end p-8 items-center">
         <div className="">
           <ul className="flex justify-end w-full items-center gap-12">
             {data.map((i, index) => (
@@ -38,6 +43,15 @@ function Navigation() {
             ))}
           </ul>
         </div>
+      </div> */}
+      <div className="flex justify-end py-1 px-7">
+        <Image
+          src="/profile-icon.png"
+          alt="progile"
+          className="cursor-pointer rounded-full bg-gray-300"
+          width={70}
+          height={70}
+        />
       </div>
     </nav>
   );
