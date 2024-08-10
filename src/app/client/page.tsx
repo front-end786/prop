@@ -40,10 +40,26 @@ function ClientPage() {
         </div>
       </div>
       <QuoteTypeDetails />
-      <SalesClientComp />
-      <BuyingClientComp />
+      <SalesClientComp salesHeadComp={<HeadingSales />} />
+      <BuyingClientComp purchaseHeadComp={<HeadingPurchase />} />
       <SaleAndPurchase />
     </>
+  );
+}
+
+function HeadingSales() {
+  return (
+    <h1 className="text-center text-5xl font-bold text-gray-700">
+      Property Sale
+    </h1>
+  );
+}
+
+function HeadingPurchase() {
+  return (
+    <h1 className="text-center text-5xl font-bold text-gray-700">
+      Property Purchase
+    </h1>
   );
 }
 

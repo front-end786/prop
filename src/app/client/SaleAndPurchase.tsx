@@ -12,7 +12,7 @@ function SaleAndPurchase() {
       <h1 className="text-center text-5xl font-bold text-gray-700">
         Property Sale and Purchase
       </h1>
-      <div className="flex w-[90%] mx-auto gap-7">
+      <div className="flex px-3">
         <SalesClientComp />
         <BuyingClientComp />
       </div>

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { BiSearch } from "react-icons/bi";
 
-function BuyingClientComp() {
+function BuyingClientComp({ purchaseHeadComp }) {
   const purchaseRules = [
     { name: "Action/Repossession" },
     { name: "Buying But to let 2nd home" },
@@ -22,9 +22,7 @@ function BuyingClientComp() {
   ];
   return (
     <>
-      <h1 className="text-center text-5xl font-bold text-gray-700">
-        Property Purchase
-      </h1>
+      {purchaseHeadComp}
       <div className="w-[50%] mx-auto my-14">
         <div className="dashboard w-full rounded-lg">
           <p className="bg-black text-white py-2 font-bold text-2xl text-center rounded-md">

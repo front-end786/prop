@@ -1,16 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { BiSearch } from "react-icons/bi";
 
-function SalesClientComp() {
-  return (
+function SalesClientComp({ salesHeadComp }) {
+  const [sales, setShowSales] = useState(false);
+  return sales === false ? (
+    <div className="flex flex-col items-center my-52 gap-8 justify-center py-4">
+      {salesHeadComp}
+
+      <button
+        className="bg-black text-white font-bold text-2xl rounded-md shadow-md px-6 py-2"
+        onClick={() => setShowSales(true)} // Add click handler to show sales
+      >
+        Show Sale Property Board
+      </button>
+    </div>
+  ) : (
     <>
-      <h1 className="text-center text-5xl font-bold text-gray-700">
-        Property Sale
-      </h1>
+      {salesHeadComp}
       <div className="w-[50%] mx-auto my-14">
         <div className="dashboard w-full rounded-lg">
           <p className="bg-black text-white py-2 font-bold text-2xl text-center rounded-md">
